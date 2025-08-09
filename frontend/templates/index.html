@@ -1,0 +1,24 @@
+<!-- Add login/logout links -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brand Tech Sheet Portal</title>
+</head>
+<body>
+    <h1>Welcome to the Brand Tech Sheet Portal</h1>
+    {% if session.get("user_id") %}
+        <p>Logged in as {{ session["user_id"] }} (<a href="/logout">Logout</a>)</p>
+    {% else %}
+        <p><a href="/login">Login</a></p>
+    {% endif %}
+    <p>
+        <a href="/upload">Upload Tech Sheet</a> |
+        <a href="/leaderboard">Leaderboard</a> |
+        <a href="/admin">Admin Dashboard</a>
+    </p>
+    <form action="/achievements/{{ user_id }}">
+        <input type="text" name="user_id" placeholder="Enter your user ID">
+        <button type="submit">View My Achievements</button>
+    </form>
+</body>
+</html>

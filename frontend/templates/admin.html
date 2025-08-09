@@ -1,0 +1,48 @@
+<!-- Show download links only to admin users -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+    <ul>
+        <li>Total uploads: {{ summary["total_uploads"] }}</li>
+        <li>Unique users: {{ summary["unique_users"] }}</li>
+        <li>Total badges awarded: {{ summary["total_badges_awarded"] }}</li>
+        <li>Uploads by brand:
+            <ul>
+            {% for brand, count in summary["uploads_by_brand"].items() %}
+                <li>{{ brand }}: {{ count }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+        <li>Trending badge reasons:
+            <ul>
+            {% for reason, count in summary["trending_badge_reasons"].items() %}
+                <li>{{ reason }} ({{ count }})</li>
+            {% endfor %}
+            </ul>
+        </li>
+        <li>Feedback count: {{ summary["feedback_count"] }}</li>
+        <li>Feedback stats:
+            <ul>
+            {% for brand, stats in summary["feedback_stats"].items() %}
+                <li>{{ brand }}: {{ stats["count"] }} feedback, Avg rating: {{ stats["average_rating"] }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+    </ul>
+    {% if session.get("role") == "admin" %}
+    <h3>Download Reports</h3>
+    <ul>
+        <li><a href="/admin/download/leaderboard">Leaderboard CSV</a></li>
+        <li><a href="/admin/download/badge_events">Badge Events CSV</a></li>
+        <li><a href="/admin/download/feedback">Feedback CSV</a></li>
+    </ul>
+    {% else %}
+        <p><em>Login as admin to download reports.</em></p>
+    {% endif %}
+    <p><a href="/">Back</a></p>
+</body>
+</html>

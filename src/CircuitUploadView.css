@@ -1,0 +1,14 @@
+.circuit-upload-view {
+  font-family: sans-serif;
+  margin: 2em;
+}
+.svg-wrap {
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin-top: 1em;
+}
+.highlighted-edge {
+  stroke: #00f !important;
+  stroke-width: 4 !important;
+  opacity: 0.7;
+}

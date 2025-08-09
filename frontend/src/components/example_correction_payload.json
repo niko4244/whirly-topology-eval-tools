@@ -1,0 +1,24 @@
+{
+  "image_id": "img_0001",
+  "elements": [
+    {
+      "id": "comp_12",
+      "action": "update_label",
+      "new_label": "Resistor",
+      "confidence_override": 0.98,
+      "terminals": [[120,250],[180,250]]
+    },
+    {
+      "id": "wire_34",
+      "action": "split",
+      "new_elements": [
+        {"id":"wire_34a","path":"M ..."},
+        {"id":"wire_34b","path":"M ..."}
+      ]
+    }
+  ],
+  "annotation_meta": {
+    "correction_reason": "detected short flagged",
+    "is_private": true
+  }
+}

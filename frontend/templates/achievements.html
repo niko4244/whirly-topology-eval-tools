@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Achievements</title>
+</head>
+<body>
+    <h2>Achievements for {{ summary['uploads'] }} uploads</h2>
+    <ul>
+    {% for badge in badges["badges"] %}
+        <li>{{ badge }}: {{ badges["details"][badge] }}</li>
+    {% endfor %}
+    </ul>
+    <h3>Badge Events</h3>
+    <ul>
+    {% for event in summary['badge_events'] %}
+        <li>{{ event['badge'] }} for {{ event['appliance_id'] }} at {{ event['timestamp'] }}: {{ event['reason'] }}</li>
+    {% endfor %}
+    </ul>
+    <p><a href="/">Back</a></p>
+</body>
+</html>

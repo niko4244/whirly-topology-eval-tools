@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Feedback</title>
+</head>
+<body>
+    <h2>Submit Feedback (Supported Brands Only)</h2>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="post">
+        <label>User ID: <input type="text" name="user_id"></label><br>
+        <label>Appliance ID: <input type="text" name="appliance_id"></label><br>
+        <label>Rating: 
+            <select name="rating">
+                <option value="5">5 - Excellent</option>
+                <option value="4">4 - Good</option>
+                <option value="3">3 - Fair</option>
+                <option value="2">2 - Poor</option>
+                <option value="1">1 - Bad</option>
+            </select>
+        </label><br>
+        <label>Comment:<br>
+        <textarea name="comment" rows="3" cols="40"></textarea>
+        </label><br>
+        <button type="submit">Submit Feedback</button>
+    </form>
+    <p><a href="/">Back</a></p>
+</body>
+</html>

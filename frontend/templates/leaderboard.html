@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaderboard</title>
+</head>
+<body>
+    <h2>Leaderboard (Supported Brands)</h2>
+    <table border="1">
+        <tr>
+        {% for col in rows[0] %}
+            <th>{{ col }}</th>
+        {% endfor %}
+        </tr>
+        {% for row in rows[1:] %}
+        <tr>
+            {% for val in row %}
+            <td>{{ val }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="/">Back</a></p>
+</body>
+</html>

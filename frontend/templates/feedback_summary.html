@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Summary</title>
+</head>
+<body>
+    <h2>Feedback Summary for {{ appliance_id }}</h2>
+    <ul>
+    {% for item in summary.get("feedback", []) %}
+        <li>User: {{ item["user_id"] }}, Rating: {{ item["rating"] }}, Comment: {{ item["comment"] }}</li>
+    {% endfor %}
+    </ul>
+    <p>Average rating: {{ summary.get("average_rating", "N/A") }}</p>
+    <p><a href="/feedback">Submit Feedback</a> | <a href="/">Back</a></p>
+</body>
+</html>
