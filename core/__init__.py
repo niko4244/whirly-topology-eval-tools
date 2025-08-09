@@ -1,0 +1,1 @@
+# Core app module: scalable, high-performance foundation.

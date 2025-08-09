@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Quicksand:400,700&display=swap');
+
+body, input, button {
+  font-family: 'Quicksand', Arial, sans-serif;
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+.retro-script {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  color: var(--coral);
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0 var(--butter);
+}

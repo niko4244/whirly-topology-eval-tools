@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: whirly
+      POSTGRES_USER: whirly
+      POSTGRES_PASSWORD: whirlypass
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  backend:
+    build: .
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql+psycopg2://whirly:whirlypass@db:5432/whirly
+      SECRET_KEY: supersecretkey
+    ports:
+      - "8000:8000"
+volumes:
+  dbdata:

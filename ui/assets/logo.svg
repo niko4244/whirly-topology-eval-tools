@@ -1,0 +1,9 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text x="10" y="42" font-family="Pacifico, cursive" font-size="38" fill="#FFB3A7" stroke="#FFF5BA" stroke-width="2" style="letter-spacing:2px;">
+    Whirly
+  </text>
+  <ellipse cx="170" cy="30" rx="18" ry="9" fill="#B2D7F9" stroke="#AEE5D8" stroke-width="2"/>
+  <path d="M 170 30 Q 160 15 140 30 Q 160 45 170 30 Z" fill="#FFD6C2" opacity="0.6"/>
+  <circle cx="170" cy="30" r="3" fill="#FFB3A7" />
+  <text x="130" y="54" font-family="Pacifico, cursive" font-size="12" fill="#AEE5D8">Retro Tools</text>
+</svg>

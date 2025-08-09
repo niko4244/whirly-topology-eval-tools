@@ -1,0 +1,27 @@
+{
+  "dashboard": {
+    "title": "Whirly System Health",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Request Time",
+        "targets": [{ "expr": "whirly_request_processing_seconds" }]
+      },
+      {
+        "type": "stat",
+        "title": "Failed Requests",
+        "targets": [{ "expr": "whirly_failed_requests_total" }]
+      },
+      {
+        "type": "stat",
+        "title": "Login Attempts",
+        "targets": [{ "expr": "whirly_login_attempts_total" }]
+      },
+      {
+        "type": "stat",
+        "title": "Active Users",
+        "targets": [{ "expr": "whirly_active_users_total" }]
+      }
+    ]
+  }
+}

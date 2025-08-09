@@ -1,0 +1,27 @@
+_BASE_: "detectron2/projects/Mask2Former/configs/coco/instance-segmentation/mask2former_R50_bs16_50ep.yaml"
+
+DATASETS:
+  TRAIN: ("whirly_train",)
+  TEST:  ("whirly_val",)
+DATALOADER:
+  NUM_WORKERS: 4
+
+SOLVER:
+  IMS_PER_BATCH: 4
+  BASE_LR: 0.00025
+  MAX_ITER: 15000
+  CHECKPOINT_PERIOD: 2000
+
+INPUT:
+  MIN_SIZE_TRAIN: (1024, 1333)
+  MAX_SIZE_TRAIN: 1333
+  MIN_SIZE_TEST: 1024
+  MAX_SIZE_TEST: 1333
+
+MODEL:
+  META_ARCHITECTURE: "Mask2Former"
+  MASK_ON: True
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  NUM_CLASSES: 3
+
+OUTPUT_DIR: "output"
